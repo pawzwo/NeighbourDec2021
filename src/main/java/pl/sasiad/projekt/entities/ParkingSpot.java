@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
@@ -15,8 +16,10 @@ public class ParkingSpot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    private String localization;
-    private long number;
+    private String parking;
+    @NotBlank
+    private String place;
+    private int disable;
 
 
 }
